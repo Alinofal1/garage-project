@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log in</title>
+</head>
+<style>
+    body {
+        background-image: url(img/Login-Screen-Background-Wood-4.jpg);
+    }
+  input {
+    margin-top: 50px;
+    height: 40px;
+    border: none;
+    outline: none;
+  }
+  
+  #box {
+    background-color: rgb(5, 1, 14);
+    max-width: 500px;
+    min-height: 450px;
+    border-radius: 30px;
+  }
+  #login {
+    background-color: red;
+    color: white;
+    transition: .5s;
+  }
+  #login:hover {
+    background-color: grey;
+  }
+  #signup {
+    background-color: red;
+    color: white;
+    transition: .5s;
+  }
+  #signup:hover{
+    background-color: gray;
+  }
+</style>
+<body class="bg-dark">
+  <header class="d-flex justify-content-center text-white py-5 mt-5"><h1>Welcome To Shift <span class="text-danger">2 Drift </span>store</h1></header>
+  <div id="box" class="container box text-center">
+    <h3 class="text-white py-4">Log in</h3>
+
+    <!-- gmail -->
+   <div class="text-center">
+      <input onkeyup="wrongG.classList.add('d-none')" onkeydown="valid.classList.add('d-none')" class="rounded-pill w-75 p-3 bg-dark text-white" autocomplete="off" type="text" name="" id="login-gmail" placeholder="@ Enter Your Gmail"><br>
+      <p id="wrongG" class="text-danger d-none">incorrect gmail try again !</p>
+      <p id="valid" class="text-success d-none">valid </p>
+      <p id="empty" class="text-danger d-none">you should fill this input !</p>
+   </div>
+
+    <!-- password -->
+    
+    
+   <div class="text-center">
+      <input onkeyup="wrongP.classList.add('d-none')" onkeydown="validetion.classList.add('d-none')" class="rounded-pill w-75 p-3 bg-dark text-white" autocomplete="off" type="password" name="" id="Password" placeholder="Enter Your Password"><br>
+      <p id="wrongP" class="text-danger d-none">incorrect Password !</p>
+      <p id="validetion" class="text-success d-none">valid !</p>
+      <p id="emptyp" class="text-danger d-none">you should fill this input !</p>
+  
+   </div>
+
+    
+    <input class="rounded-pill w-25 m-3 mt-5" type="submit" value="Log in" name="" id="login">
+    <input class="rounded-pill w-25 m-3 mt-5" type="submit" value="sign up" name="" id="signup">
+  </div>
+
+<script src="login.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

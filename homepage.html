@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shift 2 Drift store</title>
+  </head>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url(img/ai-generated-car-repair-advertisment-background-with-copy-space-free-photo.jpg);
+      background-position: center;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    .navbar .navbar-toggler:focus {
+      box-shadow: none;
+    }
+    .navbar .navbar-toggler[aria-expanded="true"] {
+      border-color: purple;
+    }
+    #profile {
+      cursor: pointer;
+    }
+    #products {
+      background-color: red;
+      border-radius: 50px;
+      width: 20px;
+      height: 20px;
+      position: fixed;
+      margin: -10px;
+      color: white;
+      font-size: small;
+    }
+    .card {
+      border-radius: 20px;
+      background-color: #200078;
+      color: white;
+      box-shadow: 5px 5px 10px grey;
+      transition: 0.5s;
+    }
+    .card:hover {
+      box-shadow: 15px 10px 10px brown;
+    }
+    .card-img {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+    #quantity {
+      outline: none;
+    }
+    #quantityinp {
+      outline: none;
+      border: none;
+    }
+    #sidebar {
+      position: fixed;
+      right: 0;
+      margin-right: 120px;
+      margin-top: -25px;
+      border-radius: 30px;
+      z-index: 10000;
+      background-color: #200078;
+    }
+    #listpro {
+      max-height: 350px;
+      overflow-y: scroll;
+    }
+    #prod {
+      width: 200px;
+    }
+    #cartitems {
+      height: 80px;
+      width: 300px;
+      
+    }
+    #removebtn {
+      height: 30px;
+      font-size: x-small;
+    }
+    #listimg {
+      margin-left: -80px;
+    }
+    #buy {
+      margin: 8px 180px;
+      padding: 0 26px;
+    }
+  </style>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          >Shift<span class="text-danger"> 2 Drift</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                target="_blank"
+                href="https://m.facebook.com/people/%D9%83%D8%B1%D8%A7%D8%AC-%D8%A7%D8%A8%D9%88-%D8%B9%D9%84%D9%8A-%D9%86%D9%88%D9%81%D9%84%D9%82%D9%84%D9%82%D9%8A%D9%84%D9%8A%D8%A9/100064267892294/"
+                >Contact</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                target="_blank"
+                href="https://www.google.com/maps/place/%D9%83%D8%B1%D8%A7%D8%AC+%D8%A7%D8%A8%D9%88+%D8%B9%D9%84%D9%8A+%D9%86%D9%88%D9%81%D9%84%E2%80%AD/@32.1884463,34.9607058,15z/data=!4m6!3m5!1s0x151d3b454f19faaf:0x4a113e5be433093!8m2!3d32.1884463!4d34.9607058!16s%2Fg%2F11fk5hvrys?entry=ttu"
+                >Location</a
+              >
+          
+          </ul>
+          <form class="d-flex">
+            <input
+              onkeyup="searchdata(this.value)"
+              id="search"
+              class="form-control me-2"
+              type="text"
+              autocomplete="off"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
+          <div class="p-3">
+            <div id="products" class="text-center d-none">0</div>
+            <a
+              id="cart1"
+              class="btn btn-danger material-symbols-outlined text-whitematerial-symbols-outlined text-white drop"
+            >
+              shopping_cart
+            </a>
+          </div>
+          <img
+            title="Your profile"
+            id="profile"
+            class="mx-3"
+            src="img/account_circle_48dp_FILL0_wght400_GRAD0_opsz48.svg"
+            alt=""
+          />
+        </div>
+      </div>
+    </nav>
+
+    <!-- sidebar -->
+    <div id="sidebar" class="sidebar p-3 text-white ms-auto d-none" style="width: 500px">
+      <a
+        href="#"
+        class="align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <span class="fs-4">Your Cart</span>
+      </a>
+      <hr />
+      <div class="container py-5">
+        <div id="listpro">
+
+        </div>
+      </div>
+      <a id="buy" class="btn btn-danger text-center ">Buy 
+        <img src="img/dollar.svg" alt="">
+      </a>
+    </div>
+
+    <!-- hero -->
+    <section id="hero" class="bg-dark py-5 text-white">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-center">
+          <div class="align-items-start">
+            <h1>Services We <span class="text-danger">Have</span></h1>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
+              provident, eligendi accusantium quos voluptatibus vel saepe odit
+              culpa veniam magnam rerum natus neque. Totam veritatis excepturi
+              fugit vel atque consequuntur?
+            </p>
+            <a
+              class="btn btn-danger"
+              href="https://www.google.com/search?q=%D9%83%D8%B1%D8%A7%D8%AC+%D8%A7%D8%A8%D9%88+%D8%B9%D9%84%D9%8A+%D9%86%D9%88%D9%81%D9%84&oq=&gs_lcrp=EgZjaHJvbWUqBggBEEUYOzIGCAAQRRg5MgYIARBFGDsyBwgCEC4YgAQyBwgDEC4YgAQyBwgEEC4YgAQyBggFEEUYPDIGCAYQRRg8MgYIBxBFGD3SAQgzMDE5ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8"
+              target="_blank"
+              >LEAREN MORE</a
+            >
+          </div>
+          <img
+            class="card-img img-fluid w-50"
+            src="img/michanich.svg"
+            alt="michanich"
+            id="dadimg"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- content -->
+    <section id="cards" class="py-5">
+      <div class="container py-5">
+        <div id="row1" class="row">
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- footer -->
+    <footer
+      class="py-2 bg-dark text-center text-white position-relative"
+      id="footer"
+    >
+      copyright &copy; 2024
+
+      <p class="text-white-50">written by: ALI NOFAL</p>
+      <a href="#" class="position-absolute bottom-0 end-0 p-4">
+        <span class="material-symbols-outlined"> arrow_circle_up </span>
+      </a>
+    </footer>
+
+    <script src="homepage.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

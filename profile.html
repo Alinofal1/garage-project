@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>your profile</title>
+</head>
+<style>
+    #arro {
+        position: fixed;
+        cursor: pointer;
+    }
+    #cars {
+        object-fit: cover;
+        width: 100%;
+        max-height: 350px;
+    }
+    #proimg {
+        margin-top: -100px;
+        width: 150px;
+        margin-left: 30px;
+    }
+    /* log out code */
+    .Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: 0.3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: RGB(29, 185, 84);
+}
+/* inputs */
+input {
+    
+    height: 50px;
+    border-radius: 10PX;
+    background: rgba(var(--bs-dark-rgb));
+    border-bottom: 1px solid black;
+    border-right: none;
+    outline: none;
+    color: white;
+    text-align: center;
+}
+
+/* plus sign */
+.sign {
+    width: 100%;
+    transition-duration: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign svg {
+    width: 18px;
+}
+
+.sign svg path {
+    fill: black;
+}
+/* text */
+.text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: black;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: 0.3s;
+}
+/* hover effect on button width */
+.Btn:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: 0.3s;
+}
+
+.Btn:hover .sign {
+    width: 30%;
+    transition-duration: 0.3s;
+    padding-left: 20px;
+}
+/* hover effect button's text */
+.Btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: 0.3s;
+    padding-right: 10px;
+}
+/* button click effect*/
+.Btn:active {
+    transform: translate(2px, 2px);
+}
+
+</style>
+<body class="bg-dark">
+    <!-- header -->
+    <div>
+        <img id="arro" class="bg-dark m-3" src="img/arrow_left_alt_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="">
+        <a id="homepage" href="index.html"></a>
+        
+        <img id="cars" class="img-fluid " src="img/porsche-oldtimer-mühlheim-mulhouse.jpg" alt="">
+        <img id="proimg" src="img/profileimg.png" alt="">
+    </div>
+    <div class="container">
+        <h1>Your profile!</h1>
+    </div>
+    <!-- profile info -->
+    <div class="container">
+        <!-- username -->
+        <div class="text-center">
+        <h3 class="text-white d-flex p-3">username: <input type="text" class="  mx-3" autocomplete="off" value="" name="" id="namea"> </h3>
+            <p id="wrongU" class="text-danger d-none">invalid username !</p>
+            <p id="validU" class="text-success d-none">valid </p>
+        </div>
+        <!-- gmail -->
+        <div class="text-center">
+        <h3 class="text-white d-flex p-3">Gmail:    <input type="text" class=" mx-5" autocomplete="off" disabled value="" name="" id="gim"></h3>
+            <p id="wrongG" class="text-danger d-none">invalid gmail !</p>
+            <p id="validG" class="text-success d-none">valid gmail</p>
+        </div>
+        <!-- phone number -->
+        <div class="text-center">
+        <h3 class="text-white d-flex p-3">phone number: <input type="text" class="  mx-3" autocomplete="off" value="" name="" id="telephone"></h3>
+            <p id="wrongphone" class="text-danger d-none">invalid phonenumber !</p>
+            <p id="validphone" class="text-success d-none">valid </p>
+        </div>
+        
+    </div>
+    
+
+    <div class="container">
+        <a id="editprofile" class="btn btn-danger rounded-pill">Edit profile</a>
+        <a id="Cancel" class="btn btn-secondary rounded-pill d-none">Cancel</a>
+
+        <!-- log out  code -->
+    <button id="Logout" class="Btn m-5">
+        <div class="sign">
+        <svg viewBox="0 0 512 512">
+            <path
+            d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"
+            ></path>
+        </svg>
+        </div>
+        <div class="text">Logout</div>
+    </button>
+    </div>
+
+
+
+
+    
+    <script src="profile.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

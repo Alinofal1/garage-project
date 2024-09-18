@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign UP</title>
+</head>
+<style>
+    body {
+        background-color: rgb(71, 71, 71);
+        background-image: url(img/Login-Screen-Background-Wood-4.jpg);
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    input {
+        display: block;
+        margin: 30px 80px;
+        width: 450px;
+        text-align: center;
+        height: 55px;
+        border-radius: 30px;
+        outline: none;
+        background-color: rgb(54, 56, 56);
+        transition: .5s;
+        color: white ;
+    }
+    input:focus {
+        background-color: black;
+        height: 62px;
+    }
+    .container {
+        max-width: 600px;
+        border-radius: 40px;
+        max-height: 1200px;
+        min-height: 750px;
+    }
+    #Confirmbtn {
+        margin-top: 50px;
+        margin-left: 220px;
+    }
+    button {
+        background-color: red;
+        color: white;
+        transition: .5s;
+        margin-bottom: 30PX;
+    }
+    button:hover {
+        background-color: black;
+    }
+</style>
+<body>
+    <header class="d-flex justify-content-center text-white  mt-5"><h1>Welcome To Shift <span class="text-danger">2 Drift </span>store</h1></header>
+    <div class="container box bg-dark text-white mb-5">
+    <h3 class="text-center py-5">Sign <span class="text-danger">U</span>p</h3>
+    <!-- usernaem -->
+   <div class="text-center">
+        <input class="border-0" type="text" autocomplete="off" maxlength="15" placeholder="User Name" name="" id="username">
+        <p id="inusername" class="text-success d-none">valid username </p>
+        <p id="Vusername" class="text-danger d-none">invalid username !</p>
+   </div>
+
+    <!-- phone number -->
+    <div class="text-center">
+        <input class="border-0" type="text" name="" maxlength="15" autocomplete="off" placeholder="Enter Phone Number" id="phonenumber">
+        <p id="inphone" class="text-danger d-none">invalid phonenumber !</p>
+        <p id="vphone" class="text-success d-none">valid phonenumber</p>
+        
+    </div>
+    <!-- gmail -->
+    <div class="text-center">
+        <input class="border-0" type="text" name="" autocomplete="off" placeholder="Enter Your Gmail" id="gmail">
+        <p id="ingmail" class="text-danger d-none">invalid Gmail !</p>
+        <p id="vgmail" class="text-success d-none">valid Gmail</p>
+    </div>
+    <!-- password -->
+    <div class="text-center">
+        <input class="border-0" type="text" name="" maxlength="17" autocomplete="off" placeholder="Enter Password" id="Password">
+        <p id="ipassword" class="text-danger d-none">invalid Password !</p>
+        <p id="vpassword" class="text-success d-none">valid Password</p>
+    </div>
+
+
+    <!-- confirm password -->
+    <div class="text-center">
+        <input class="border-0" type="text" name="" autocomplete="off" placeholder="Confirm Password" id="conPassword">
+        <p id="iconfirm" class="text-danger d-none">Password dosen't match !</p>
+        <p id="vconfirm" class="text-success d-none">Password match</p>
+    </div>
+
+    <button id="Confirmbtn" class="rounded-pill border-0 px-5 py-2">Confirm</button>
+
+    </div>
+
+
+    <script src="signup.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
